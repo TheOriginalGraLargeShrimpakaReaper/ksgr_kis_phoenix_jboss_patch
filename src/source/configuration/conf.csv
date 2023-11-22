@@ -1,0 +1,5 @@
+riskid,startpath,destinatination,imagename,alternatedir,datafilename,itemname,x-axis-title,y-axis-title,title,bubble-standard-size
+postgresql,parentdir,src/source/riskmatrix,riskmatrixproblem.png,/home/itgramic/LaTex/riskmatrix,riskmatrixproblem.csv,R,Schadensausmass (SM),Eintrittswahrscheinlichkeit (WS),Risiko Cockpit PostgreSQL Datenbanken KSGR,1000
+project,parentdir,src/source/riskmatrix,riskmatrix-project.png,/home/itgramic/LaTex/riskmatrix,riskmatrix-project.csv,R,Schadensausmass (SM),Eintrittswahrscheinlichkeit (WS),Risiko Cockpit Projekt,1000
+Postgresql-massnahme,parentdir,src/source/riskmatrix,Riskmatrixproblem-massnahmen.png,/home/itgramic/LaTex/riskmatrix,riskmatrixproblem-massnahmen.csv,R,Schadensausmass (SM),Eintrittswahrscheinlichkeit (WS),Risiko Cockpit PostgreSQL Datenbanken KSGR – Massnahme,1000
+Project-massnahme,parentdir,src/source/riskmatrix,Riskmatrix-project-massnahmen.png,/home/itgramic/LaTex/riskmatrix,riskmatrix-project-massnahmen.csv,R,Schadensausmass (SM),Eintrittswahrscheinlichkeit (WS),Risiko Cockpit Projekt – Massnahme,1000

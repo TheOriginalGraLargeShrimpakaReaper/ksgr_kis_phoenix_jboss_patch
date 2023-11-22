@@ -1,0 +1,11 @@
+{
+	"result_limit":"100",
+	"access_type":"groups",
+	"zotero_access_id":"5222465",
+	"collection_id":"HMKQVCT7",
+	"api_key":"6Xgb3XhGjQXwA8NuZgu3bw3s",
+	"keystore_file":"keystore.json",
+	"keystore_filepath":"src/source/configuration",
+	"bibtex_filepath":"src/source",
+	"bibtex_filename":"Disposition_Michael_Graber.bib"
+}
