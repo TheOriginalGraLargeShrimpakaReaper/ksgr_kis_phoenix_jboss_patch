@@ -3,16 +3,19 @@
 
 % Preamble
 \chapter{Einführung}
-Im Rahmen des von Microsoft indizierten Patchdays, bei dem Microsoft alle 2 Monate einen Patch veröffentlicht, müssen auch die \Gls{JBoss}-Server des KIS Phoenix angefasst werden.
+{\color{black}Im Rahmen des von Microsoft indizierten Patchdays, bei dem Microsoft alle 2 Monate einen Patch veröffentlicht, müssen auch die \Gls{JBoss}-Server des KIS Phoenix angefasst werden.}
 
-Das KIS Phoenix verfügt dabei über 4 JBoss-Server, 2 für die Testsysteme resp.
-das Demosytsem und 2 für das produktive System.
+{\color{black} Das KIS Phoenix verfügt dabei über 4 JBoss-Server, 2 für die Testsysteme resp.
+das Demosytsem und 2 für das produktive System.}
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{source/introduction/KIS_Phoenix_Architektur}
     \caption{Architektur KIS Phoenix\cite{KFDFYH5H}}
     \label{fig:architektur-kis-phoenix}
 \end{figure}
+{\color{black}
+Das Test1 und Demosystem hat je einen JBoss-Node auf einer Seite, das Test2 hat nur einen Node.
+Das Produktivsystem hat je Site einen Node, also insgesamt vier Nodes.}
 
 Die genaue Konfiguration sieht wie folgt aus:
 % Please add the following required packages to your document preamble:
