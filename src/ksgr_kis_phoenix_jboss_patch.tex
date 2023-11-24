@@ -5,29 +5,20 @@
 \usepackage{longtable}
 \usepackage{multicol}
 \usepackage{paracol}
-%\usepackage{hyperref}
-%\usepackage{float}
+
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage[table,xcdraw]{xcolor}
 % Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
 \usepackage{lscape}
-%\usepackage{longtable}
 \usepackage[toc, xindy]{glossaries}
 \usepackage{textcomp}
 \usepackage{rotating}
 \usepackage{pdflscape}
-%\usepackage{natbib}
-%\usepackage{biblatex}
-%\usepackage[acronym]{glossaries}
-%\usepackage[backend=biber,style=ieee,]{biblatex}
 
 \usepackage{enumitem,hyperref}
 
-%\usepackage[top=1.263cm,bottom=1.251cm,hmargin=2cm,includeheadfoot,head=12pt,headsep=0cm,foot=0.75cm,footskip=1.3989999cm]{geometry}
-%\usepackage[ngerman]{babel}
-%\usepackage{xcolor,microtype}
-%\usepackage{microtype}
+
 \usepackage[explicit]{titlesec}
 \usepackage{calc,pifont,eurosym,amsmath,wasysym,amssymb,amsfonts}
 
@@ -36,52 +27,13 @@
 \input{content/glossary/glossary}
 
 % Fortlaufende Nummerierung
-%\usepackage{enumitem}
 \usepackage{listings}
 \usepackage{csquotes}
 
 % Bibliography Packages
-%\usepackage{amsmath}
 \usepackage[style=numeric,backend=biber,sortlocale=de_DE,bibencoding=utf8,sorting=nty,minbibnames=1,maxbibnames=6,autopunct=true,natbib=true,hyperref=false,doi=false,isbn=false,url=false,eprint=false]{biblatex}
 \DeclareLanguageMapping{american}{american-apa}
-\addbibresource{source/template.bib}
-%\thispagestyle{fancy}
-%\addbibresource{disposition_michael_graber.bib}
-% wird anderweitig gesetzt
-%\geometry{
-%   left=2cm,
-%   right=2cm,
-%   top=1.25cm,
-%   bottom=2cm,
-%   textwidth=8cm,
-%   marginpar=3cm}
-
-%\newcommand{\@department}{}
-%\newcommand{\department}[1]{\gdef\@department{#1}}
-%\newcommand{\@abteilung}{}
-%\newcommand{\abteilung}[1]{\gdef\@abteilung{#1}}
-%\newcommand{\@vorname}{}
-%\newcommand{\vorname}[1]{\gdef\@vorname{#1}}
-%\newcommand{\@nachname}{}
-%\newcommand{\nachname}[1]{\gdef\@nachname{#1}}
-%\newcommand{\@funktion}{}
-%\newcommand{\funktion}[1]{\gdef\@funktion{#1}}
-%\newcommand{\@mail}{}
-%\newcommand{\mail}[1]{\gdef\@mail{#1}}
-%\newcommand{\@telefon}{}
-%\newcommand{\telefon}[1]{\gdef\@telefon{#1}}
-%\newcommand{\@footertitel}{}
-%\newcommand{\footertitel}[1]{\gdef\@footertitel{#1}}
-
-% Pages
-%\department{Departement ICT}
-%\abteilung{Data Center}
-%\vorname{Michael}
-%\nachname{Graber}
-%\funktion{Datenbank Administrator}
-%\mail{michael.graber@ksgr.ch}
-%\telefon{+41 81 256 68 25}
-%\footertitel{Titel}
+\addbibresource{source/ksgr_kis_phoenix_jboss_patch.bib}
 
 \geometry{
    left=2cm,
@@ -120,16 +72,11 @@
 
 \fancyhf{}% Clear all headers/footers
 \fancypagestyle{headings}{\fancyhf{}
-%  \fancyhead[L]{}
   \fancyfoot[R]{\fontsize{7.5pt}{13.8ptpt} \raggedleft\selectfont\sffamily\bfseries\color[HTML]{000000}\thepage{}}
   \fancyfoot[L]{\fontsize{7.5pt}{13.8ptpt} \raggedleft\selectfont\sffamily\bfseries\color[HTML]{000000}© Kantonsspital Graubünden | Titel}
   \renewcommand\headrulewidth{0pt}
   \renewcommand\footrulewidth{0pt}
   \renewcommand\thepage{\arabic{page}}
-%  \rhead{\includegraphics[width=1cm]{source/main/ibw}}
-%  \rhead{\includegraphics{source/main/ksgr}}
-
-
 }
 \fancypagestyle{FirstPage}{\fancyhf{}
   \fancyhead[L]{}
@@ -137,12 +84,9 @@
   \renewcommand\headrulewidth{0pt}
   \renewcommand\footrulewidth{0pt}
   \renewcommand\thepage{\arabic{page}}
-%  \rleft{\includegraphics[width=1cm]{source/main/ksgr}}
-%  \rleft{\includegraphics{source/main/ksgr}}
   \fancyhead[L]{\includegraphics{source/main/ksgr}}
   \fancyhead[C]{\fontsize{7.5pt}{0ptpt} \raggedleft\selectfont\sffamily\bfseries\color[HTML]{000000}\makebox[32em][l]{Kantonsspital Graubünden} \\ \makebox[32em][l]{Departement ICT} \\ \makebox[32em][l]{\textbf{Data Center}} \\ \makebox[32em][l]{www.ksgr.ch} \\}
   \fancyhead[R]{\fontsize{7.5pt}{0ptpt} \raggedleft\selectfont\sffamily\bfseries\color[HTML]{000000}\makebox[8em][l]{\textbf{Michael}} \\ \makebox[8em][l]{\textbf{Graber}} \\ \makebox[8em][l]{Datenbank Administrator} \\ \makebox[8em][l]{michael.graber@ksgr.ch} \\ \makebox[8em][l]{+41 81 256 68 25} \\}
-%  \headheight 33pt
 }
 %    % Headings
 
@@ -162,33 +106,18 @@
 \titleformat{\subparagraph}[block]{\filright\normalfont\normalsize\normalcolor\fontsize{10pt}{13.8pt}\selectfont\rmfamily\bfseries\color[HTML]{000000}}{{\fontsize{11pt}{14.400001pt}\selectfont \makebox[2.5cm][l]{\thesubparagraph}}}{0pt}{#1}[]
 \titlespacing*{\subparagraph}{0pt}{0.847cm plus 0.1694cm minus 0.0847cm}{0.212cm plus 0.0424cm minus 0.0212cm}
 
-
-
 \begin{document}
     \toptitel{Windows Patchday}
     \dokuemnttitel{KIS Phoenix - JBoss Patch}
     \datum{24.11.2023}
     \maketitle
-%    \newpage
-%    \fancypagestyle
     \clearpage
-%    \pagestyle{headings}
-%    \clearpage
-%    \thispagestyle{fancy}
     \thispagestyle{fancy}
     \begin{managementsummary}
         blabla
     \end{managementsummary}
     \thispagestyle{fancy}
     \pagestyle{headings}
-%    \pagestyle{headings}
-%    \thispagestyle{fancy}
-
-%    \begin{abstract}
-%        ... English summary ...
-%    \end{abstract}
-%    \clearpage
-%    \thispagestyle{fancy}
     {
         \hypersetup{hidelinks}
         \tableofcontents
@@ -199,13 +128,6 @@
     \thispagestyle{fancy}
     \startThesis % Befehl muss vor dem ersten chapter stehen (Seitennummerierung!)
     \clearpage
-%    \input{content/initial_situation/initial_situation}
-%    \input{content/goals_benefits/goals_benefits}
-%    \input{content/delimitations/delimitations}
-%    \input{content/dependencies_risks/dependencis_risks}
-%    \input{content/planned_procedure/planned_procedure}
-%    \input{content/provisional_table_of_content/provisional_table_of_content}
-%    \input{content/allowance/allowance}
     \input{content/introduction/introduction.tex}
     \input{content/appendix/appendix}
 

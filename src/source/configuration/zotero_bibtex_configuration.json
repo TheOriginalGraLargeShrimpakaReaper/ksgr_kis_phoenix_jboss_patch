@@ -5,7 +5,7 @@
 	"collection_id":"6334PM55",
 	"api_key":"6Xgb3XhGjQXwA8NuZgu3bw3s",
 	"keystore_file":"keystore.json",
-	"keystore_filepath":"src/source/configuration",
-	"bibtex_filepath":"src/source",
+	"keystore_filepath":"source/configuration",
+	"bibtex_filepath":"source",
 	"bibtex_filename":"ksgr_kis_phoenix_jboss_patch.bib"
 }

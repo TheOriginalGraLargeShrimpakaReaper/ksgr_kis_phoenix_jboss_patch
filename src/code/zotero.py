@@ -9,7 +9,7 @@ import math
 def load_configuration():
     zotero_bibtex_config = dict()
     zotero_conf_filename = 'zotero_bibtex_configuration.json'
-    zotero_conf_dir = os.path.join(os.path.dirname(os.getcwd()), 'src', 'source', 'configuration')
+    zotero_conf_dir = os.path.join(os.path.dirname(os.getcwd()), 'source', 'configuration')
     # zotero_conf_dir = os.path.join(os.getcwd(), 'src', 'content')
     json_path = os.path.join(zotero_conf_dir, zotero_conf_filename)
 
