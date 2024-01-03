@@ -2,28 +2,36 @@
 %! Date = 11.10.23
 
 % Preamble
+%\begin{flushleft}
 {
     \hypersetup{hidelinks}
     \listoffigures
 }
+%\end{flushleft}
+
 \pagestyle{headings}
 \thispagestyle{fancy}
+%\begin{flushleft}
 {
     \hypersetup{hidelinks}
     \listoftables
     \thispagestyle{fancy}
 }
+%\end{flushleft}
 \pagestyle{headings}
 \thispagestyle{fancy}
 
+%\begin{flushleft}
 {
     \cleardoublepage
     \renewcommand{\bibsetup}{\thispagestyle{fancy}}
 
     \printbibliography
 }
-
+%\end{flushleft}
+%\begin{flushleft}
 {
     \renewcommand*\glossarypreamble{\thispagestyle{fancy}}
     \printnoidxglossaries
 }
+%\end{flushleft}

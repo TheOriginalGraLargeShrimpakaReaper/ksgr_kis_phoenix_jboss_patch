@@ -30,6 +30,12 @@
 \usepackage{listings}
 \usepackage{csquotes}
 
+% ASCII Folder Diagramm
+\usepackage{dirtree}
+%\usepackage{forest}
+
+\usepackage[]{mdframed}
+
 % Bibliography Packages
 \usepackage[style=numeric,backend=biber,sortlocale=de_DE,bibencoding=utf8,sorting=nty,minbibnames=1,maxbibnames=6,autopunct=true,natbib=true,hyperref=false,doi=false,isbn=false,url=false,eprint=false]{biblatex}
 \DeclareLanguageMapping{american}{american-apa}
@@ -73,7 +79,7 @@
 \fancyhf{}% Clear all headers/footers
 \fancypagestyle{headings}{\fancyhf{}
   \fancyfoot[R]{\fontsize{7.5pt}{13.8ptpt} \raggedleft\selectfont\sffamily\bfseries\color[HTML]{000000}\thepage{}}
-  \fancyfoot[L]{\fontsize{7.5pt}{13.8ptpt} \raggedleft\selectfont\sffamily\bfseries\color[HTML]{000000}© Kantonsspital Graubünden | Titel}
+  \fancyfoot[L]{\fontsize{7.5pt}{13.8ptpt} \raggedleft\selectfont\sffamily\bfseries\color[HTML]{000000}© Kantonsspital Graubünden | KIS Phoenix - JBoss Patch}
   \renewcommand\headrulewidth{0pt}
   \renewcommand\footrulewidth{0pt}
   \renewcommand\thepage{\arabic{page}}
@@ -129,6 +135,9 @@
     \startThesis % Befehl muss vor dem ersten chapter stehen (Seitennummerierung!)
     \clearpage
     \input{content/introduction/introduction.tex}
+    \input{content/general/general.tex}
+    \input{content/test/test.tex}
+    \input{content/prod/prod.tex}
     \input{content/appendix/appendix}
 
 \end{document}
