@@ -34,4 +34,12 @@
     \renewcommand*\glossarypreamble{\thispagestyle{fancy}}
     \printnoidxglossaries
 }
+\begin{appendix}
+    \clearpage
+    \addcontentsline{toc}{chapter}{Anhang}
+    \addtocontents{toc}{%
+      \protect\addtokomafont{chapterentry}{Anhang\ }
+    }
+    \input{content/appendix/811534244-kisproddown.tex}
+\end{appendix}
 %\end{flushleft}
