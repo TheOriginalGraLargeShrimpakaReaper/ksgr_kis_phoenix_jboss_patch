@@ -4,7 +4,7 @@
 % Preamble
 \chapter{Generell}
 \begin{flushleft}
-    Grundsätzlich verlauft der Patch auf den Test- und Produktivservern gleich ab.
+    Grundsätzlich verläuft der Patch auf den Test- und Produktivservern gleich ab.
     Die Services auf dem zweiten Server dürfen erst gestoppt werden, wenn der \Gls{JBoss}-Service auf dem ersten Server vollständig einsatzbereit ist und
     verbindungen annimmt.
 \end{flushleft}
@@ -75,6 +75,29 @@
     \end{lstlisting}
 \end{flushleft}
 \begin{flushleft}
+    Erkennen, ob ein \Gls{JBoss}-Service gestoppt ist, tut man daran, dass folgender Eintrag zuletzt im \texttt{server.log} steht:
+    \lstset{style=gra_codestyle}
+    \begin{lstlisting}[language=sh, caption=Service gestoppt - server.log,captionpos=b,label={lst:service-stopped-service.log},breaklines=true]
+2024-01-05 10:56:10,422 INFO  [--] [org.jboss.as] ip[] mib[] user[] session[] request[] thread[MSC service thread 1-3]: WFLYSRV0050: JBoss EAP 7.4.8.GA (WildFly Core 15.0.19.Final-redhat-00001) stopped in 1199ms
+    \end{lstlisting}
+    Ein Erfolgreicher start erkennt man wiederum an folgenden Eintrag:
+    \lstset{style=gra_codestyle}
+    \begin{lstlisting}[language=sh, caption=Service gestartet - server.log,captionpos=b,label={lst:service-started-service.log},breaklines=true]
+2024-01-05 11:01:36,000 INFO  [--] [com.cgm.phoenix.common.masterdata.srv.catalog.dao.CatalogValueDAO] ip[] mib[] user[] session[] request[] thread[ServerService Thread Pool -- 273]: Creating folder index...
+2024-01-05 11:01:36,047 INFO  [--] [com.cgm.phoenix.common.masterdata.srv.catalog.dao.CatalogValueDAO] ip[] mib[] user[] session[] request[] thread[ServerService Thread Pool -- 273]: Creating search index...
+2024-01-05 11:02:00,656 INFO  [--] [com.cgm.phoenix.common.masterdata.srv.catalog.dao.CatalogValueDAO] ip[] mib[] user[] session[] request[] thread[ServerService Thread Pool -- 273]: Catalog data loaded.
+2024-01-05 11:02:00,656 INFO  [--] [com.cgm.phoenix.common.masterdata.srv.catalog.CatalogCacheProvider] ip[] mib[] user[] session[] request[] thread[ServerService Thread Pool -- 273]: Instant Catalogs successfully initialized.
+2024-01-05 11:02:00,891 INFO  [--] [org.jboss.as.server] ip[] mib[] user[] session[] request[] thread[ServerService Thread Pool -- 43]: WFLYSRV0010: Deployed "phoenix.ear" (runtime-name : "phoenix.ear")
+2024-01-05 11:02:00,891 INFO  [--] [org.jboss.as.server] ip[] mib[] user[] session[] request[] thread[ServerService Thread Pool -- 43]: WFLYSRV0010: Deployed "jolokia.war" (runtime-name : "jolokia.war")
+2024-01-05 11:02:00,922 INFO  [--] [org.jboss.as.server] ip[] mib[] user[] session[] request[] thread[Controller Boot Thread]: WFLYSRV0212: Resuming server
+2024-01-05 11:02:01,000 INFO  [--] [org.jboss.as] ip[] mib[] user[] session[] request[] thread[Controller Boot Thread]: WFLYSRV0025: JBoss EAP 7.4.8.GA (WildFly Core 15.0.19.Final-redhat-00001) started in 281140ms - Started 18250 of 18473 services (563 services are lazy, passive or on-demand)
+2024-01-05 11:02:01,000 INFO  [--] [org.jboss.as] ip[] mib[] user[] session[] request[] thread[Controller Boot Thread]: WFLYSRV0060: Http management interface listening on http://10.0.22.52:9990/management
+2024-01-05 11:02:01,016 INFO  [--] [org.jboss.as] ip[] mib[] user[] session[] request[] thread[Controller Boot Thread]: WFLYSRV0051: Admin console listening on http://10.0.22.52:9990
+    \end{lstlisting}
+
+    Es kann aber mehrere Minuten dauern, bis ein Service vollständig gestartet ist.
+\end{flushleft}
+\begin{flushleft}
     Am Einfachsten ist, man erstellt sich drei Ini-Files, eines für beide Server zusammen im Cluster und eines pro Server.
     Dann braucht man nur die Files umzubennen und kann rasch Testen.
 \end{flushleft}
@@ -109,5 +132,8 @@
     \begin{mdframed}
     Vorsichht!\\Sollte es trotzdem mal vorkommen, niemals die \Gls{RDP}-Verbindung schliessen!\\Ansonsten wird es unmöglich sein, den Server gezielt zu rebooten.
     \end{mdframed}
-
+\end{flushleft}
+\begin{flushleft}
+    Desweiteren muss auf der \Gls{VMware vSphere} die Berechtigung gegeben sein, Snapshots erstellen und löschen zu können.
+    Auch Restores via Snapshot sollten machbar sein.
 \end{flushleft}

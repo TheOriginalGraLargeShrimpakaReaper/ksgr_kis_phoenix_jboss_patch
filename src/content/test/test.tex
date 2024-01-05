@@ -60,19 +60,22 @@
 \begin{flushleft}
     Folgende Schritte müssen gemacht werden, um den Patch durchzuführen:
     \begin{enumerate}
+        \item Snapshost der beiden Server \texttt{sks0060} und \texttt{sks0103} machen
         \item Prüfen ob \texttt{Workstation.exe Test1} auf \texttt{sks0060} und \texttt{sks0103} verbinden kann
+        \item Prüfen ob \texttt{Workstation.exe Test1} nur auf \texttt{sks0103} verbinden kann
         \item Den Dienst \texttt{PhoenixJBossEAP\_test1\_1} auf \texttt{sks0060} stoppen
         \item Server \texttt{sks0060} rebooten
-        \item Auf \texttt{sks0060} prüfen ob keine Patches mehr gezogen werden könnten
+        \item Auf \texttt{sks0060} prüfen, ob keine Patches mehr gezogen werden könnten
         \item Prüfen ob \texttt{Workstation.exe Test1} auf \texttt{sks0060} verbinden kann
         \item Prüfen ob \texttt{Workstation.exe Test1} auf \texttt{sks0103} verbinden kann
         \item Prüfen ob \texttt{Workstation.exe Test1} auf \texttt{sks0060} und \texttt{sks0103} verbinden kann
         \item Den Dienst \texttt{PhoenixJBossEAP\_test1\_2} auf \texttt{sks0103} stoppen
         \item Server \texttt{sks0103} rebooten
-        \item Auf \texttt{sks0103} prüfen ob keine Patches mehr gezogen werden könnten
+        \item Auf \texttt{sks0103} prüfen, ob keine Patches mehr gezogen werden könnten
         \item Prüfen ob \texttt{Workstation.exe Test1} auf \texttt{sks0103} verbinden kann
         \item Prüfen ob \texttt{Workstation.exe Test1} auf \texttt{sks0060} verbinden kann
         \item Prüfen ob \texttt{Workstation.exe Test1} auf \texttt{sks0060} und \texttt{sks0103} verbinden kann
+        \item Wenn die Tests erfolgreich waren, Snapshost der beiden Server \texttt{sks0060} und \texttt{sks0103} löschen
     \end{enumerate}
 \end{flushleft}
 \begin{flushleft}

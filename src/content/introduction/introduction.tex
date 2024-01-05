@@ -5,7 +5,7 @@
 \chapter{Einführung}
 \begin{flushleft}
     Im Rahmen des von Microsoft indizierten Patchdays, bei dem Microsoft alle 2 Monate einen Patch veröffentlicht, müssen auch die \Gls{JBoss}-Server des KIS Phoenix angefasst werden.
-    Die Server werden dabei von \Gls{Ivanti} mit den Patches betankt, so das man nur noch einen Reboot durchführen und nicht noch erst die Patches herunterladen muss..
+    Die Server werden dabei von \Gls{Ivanti} mit den Patches betankt, so das man nur noch einen Reboot durchführen und nicht noch erst die Patches herunterladen muss.
 \end{flushleft}
 \begin{flushleft}
     Das KIS Phoenix verfügt dabei über 4 JBoss-Server, 2 für die Testsysteme resp.
@@ -18,7 +18,7 @@
     \end{figure}
 \end{flushleft}
 \begin{flushleft}
-    Das Test1 und Demosystem hat je einen JBoss-Node auf einer Seite, das Test2 hat nur einen Node auf einem Server.
+    Das Test1 und Demosystem hat je einen JBoss-Node auf einer Seite, dass Test2 hat nur einen Node auf einem Server.\\
     Das Produktivsystem hat je Site zwei Nodes, also insgesamt vier Nodes.
 \end{flushleft}
 \begin{flushleft}
@@ -65,8 +65,21 @@
     Meistens existieren pro Node die verzeichnisse meherer Versionen, üblicherweise immer die der aktuellen und vorangehenden Version.\\Daher aufpassen in welchem Verzeichnis man ist!
     \end{mdframed}
 
-    Auf jedem Server wurde zudem \textit{baretail.exe} installiert, ein Logging-Tool welches eine Echtzeitüberwachung der Logs ermöglicht.
-    Leider ist es nicht auf jedem Server gleich installiert sondern individuell.
+    Auf jedem Server wurde zudem \texttt{baretail.exe} installiert, ein Logging-Tool welches eine Echtzeitüberwachung der Logs ermöglicht.
+    Leider ist es nicht auf jedem Server gleich installiert, sondern individuell.
+\end{flushleft}
+\begin{flushleft}
+    Die Log-Rotation der Logs beträgt 12 Stunden.
+    Das heisst, immer 12 Uhr Mittags und Mitternachts werden die Logs erneuert.
+
+    Bei diesem Schritt werden aber nicht nur die Logs neu erstellt, sondern auch der ganze Cache neu geladen.
+    Der Cache wird zudem auch neu geladen, wenn ein Service rebooted wird, weshalb dieser Vorgang recht viel Zeit in Anspruch nimmt.
+\end{flushleft}
+\begin{flushleft}
+    Die Nodes führen untereinander eine Art Load Balancing durch.
+    Fällt ein Node oder Server aus, werden die User auf die anderen Nodes verteilt.\\
+    Das gilt auch innerhalb eines Servers, stoppe ich einen Node wird, wenn überhaupt möglich, dessen Last auf den zweiten Node des Servers gelegt.\\
+    Allerdings hat nur das Produktivsystem diese Konfiguration.
 \end{flushleft}
 \begin{flushleft}
     Die genaue Konfiguration sieht wie folgt aus:

@@ -4,7 +4,80 @@
 % Preamble
 \chapter{Produktivsystem}
 \begin{flushleft}
-    Beim Produktivsystem
+    Ausserdem sollten ebenfalls zwei Ini-Files präperiert werden.\\
+    \textbf{sks0020}\\
+    \lstset{style=gra_codestyle}
+    \begin{lstlisting}[language=sh, caption=Workstation.ini PROD sks0020,captionpos=b,label={lst:workstation.ini-prod-sks0020},breaklines=true]
+    -clean
+    -data
+    @noDefault
+    -configuration c:/temp/phoenix/prod_7_23_1/eclipse/configuration
+    -nl
+    de_CH
+    -vmargs
+    -Dorg.eclipse.update.reconcile=false
+    -Dphoenix.db=Phoenix
+    -Dphoenix.application.workspace.createdir=true
+    -Dphoenix.application.workspace=\\\\phoenix\workspace\prod_7_23_1
+    -Dphoenix.login.usernamefile=%APPDATA%/Phoenix/login_username_prod
+    -Dphoenix.server.nodes=sks0020:8443,sks0020:8543
+    -Djavax.net.ssl.trustStore=C:\Program Files (x86)\Phoenix7\truststore.jks
+    -Dphoenix.login.enableLDAP=true
+    -Dphoenix.application.winlogin=true
+    -XX:-CreateMinidumpOnCrash
+    \end{lstlisting}
+    \textbf{sks0020}\\
+    \lstset{style=gra_codestyle}
+    \begin{lstlisting}[language=sh, caption=Workstation.ini PROD sks0021,captionpos=b,label={lst:workstation.ini-prod-sks0021},breaklines=true]
+    -clean
+    -data
+    @noDefault
+    -configuration c:/temp/phoenix/prod_7_23_1/eclipse/configuration
+    -nl
+    de_CH
+    -vmargs
+    -Dorg.eclipse.update.reconcile=false
+    -Dphoenix.db=Phoenix
+    -Dphoenix.application.workspace.createdir=true
+    -Dphoenix.application.workspace=\\\\phoenix\workspace\prod_7_23_1
+    -Dphoenix.login.usernamefile=%APPDATA%/Phoenix/login_username_prod
+    -Dphoenix.server.nodes=sks0021:8443,sks0021:8543
+    -Djavax.net.ssl.trustStore=C:\Program Files (x86)\Phoenix7\truststore.jks
+    -Dphoenix.login.enableLDAP=true
+    -Dphoenix.application.winlogin=true
+    -XX:-CreateMinidumpOnCrash
+    \end{lstlisting}
+    \begin{mdframed}
+    Vorsichht!\\Beim Installieren einer neuen produktiven \texttt{Workstation.exe} wird das ganze Verzeichnis jeweils auf dem Laufwerk \texttt{C:\textbackslash} überschrieben!\\Daher müssen die Inis immer wieder neu erstellt werden.
+    \end{mdframed}
+\end{flushleft}
+\begin{flushleft}
+    Folgende Schritte müssen gemacht werden, um den Patch durchzuführen:
+    \begin{enumerate}
+        \item Snapshost der beiden Server \texttt{sks0020} und \texttt{sks0021} machen
+        \item Prüfen ob \texttt{Workstation.exe Prod} auf \texttt{sks0020} und \texttt{sks0021} verbinden kann
+        \item Prüfen ob \texttt{Workstation.exe Prod} nur auf \texttt{sks0021} verbinden kann
+        \item Den Dienst \texttt{PhoenixJBossEAP\_prod\_3} auf \texttt{sks0020} stoppen
+        \item Prüfen ob \texttt{Workstation.exe Prod} nur auf \texttt{sks0020} verbinden kann
+        \item Den Dienst \texttt{PhoenixJBossEAP\_prod\_1} auf \texttt{sks0020} stoppen
+        \item Server \texttt{sks0020} rebooten
+        \item Auf \texttt{sks0020} prüfen, ob keine Patches mehr gezogen werden könnten
+        \item Prüfen ob \texttt{Workstation.exe Prod} auf \texttt{sks0020} verbinden kann
+        \item Prüfen ob \texttt{Workstation.exe Prod} auf \texttt{sks0021} verbinden kann
+        \item Prüfen ob \texttt{Workstation.exe Prod} auf \texttt{sks0020} und \texttt{sks0021} verbinden kann
+        \item Den Dienst \texttt{PhoenixJBossEAP\_prod\_4} auf \texttt{sks0021} stoppen
+        \item Prüfen ob \texttt{Workstation.exe Prod} nur auf \texttt{sks0021} verbinden kann
+        \item Den Dienst \texttt{PhoenixJBossEAP\_prod\_2} auf \texttt{sks0021} stoppen
+        \item Server \texttt{sks0021} rebooten
+        \item Auf \texttt{sks0021} prüfen, ob keine Patches mehr gezogen werden könnten
+        \item Prüfen ob \texttt{Workstation.exe Prod} auf \texttt{sks0021} verbinden kann
+        \item Prüfen ob \texttt{Workstation.exe Prod} auf \texttt{sks0020} verbinden kann
+        \item Prüfen ob \texttt{Workstation.exe Prod} auf \texttt{sks0020} und \texttt{sks0021} verbinden kann
+        \item Nach einem Tag ohne Fehler, die Snapshost der beiden Server \texttt{sks0020} und \texttt{sks0021} löschen
+    \end{enumerate}
+\end{flushleft}
+\begin{flushleft}
+    Das ganze noch als Sequenzdiagramm dargestellt:
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{source/prod/sequenzdiagramm_prod}
