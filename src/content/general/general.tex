@@ -85,5 +85,29 @@
     \end{mdframed}
 \end{flushleft}
 \begin{flushleft}
+    Obwohl die Server mittels \Gls{Ivanti} betankt werden, kann es vorkommen, dass nicht alle Patches geladen wurden.
+    Um sicherzustellen, dass das System komplett sauber gepatched wurde, sollte man immer noch auf Updates Prüfen.
+
+    Geprüft wird Normal via Suche:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{source/general/search_for_updates}
+        \caption{Check-Updates}
+        \label{fig:check-updates}
+    \end{figure}
+
+    Solange noch Updates wie folgt vorhanden sind, müssen diese manuell nachgeladen und installiert werden:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{source/general/updates_available}
+        \caption{Updates available}
+        \label{fig:updates-available}
+    \end{figure}
+
+    Dies ist aber äusserst selten der Fall.
+
+    \begin{mdframed}
+    Vorsichht!\\Sollte es trotzdem mal vorkommen, niemals die \Gls{RDP}-Verbindung schliessen!\\Ansonsten wird es unmöglich sein, den Server gezielt zu rebooten.
+    \end{mdframed}
 
 \end{flushleft}
